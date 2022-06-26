@@ -10,11 +10,11 @@ import java.util.function.Function;
 /**
  * Base Page Object class that simplify the use of mobile elements
  */
-public class BasePageObject {
-    private AppiumDriver driver;
+public abstract class BasePageObject {
+    protected final AppiumDriver driver;
     public static final String BASE_ID = "br.com.alura.aluraesporte:id/";
 
-    public BasePageObject(AppiumDriver driver) {
+    protected BasePageObject(AppiumDriver driver) {
     this.driver = driver;
     }
 
@@ -38,4 +38,6 @@ public class BasePageObject {
         WebDriverWait wait = new WebDriverWait(driver,maxTimeOutInSeconds);
         wait.until(condition);
     }
+
+    abstract void FetchElements();
 }

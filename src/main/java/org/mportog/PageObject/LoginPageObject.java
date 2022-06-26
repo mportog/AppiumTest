@@ -4,14 +4,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class LoginPageObject extends BasePageObject {
-    private AppiumDriver driver;
     private MobileElement signingButton;
 
     public LoginPageObject(AppiumDriver driver) {
         super(driver);
-        this.driver = driver;
     }
 
+    @Override
     public void FetchElements() {
         signingButton = findElementById("login_botao_cadastrar_usuario");
     }
